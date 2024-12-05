@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux - The Open Source Operating System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #2d2d2d, #333);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linux - The Open Source Operating System</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Linux?</h2>
+        <p>Linux is an open-source, Unix-like operating system kernel created by Linus Torvalds and released in 1991. It is the foundation of many operating systems, including Ubuntu, Fedora, CentOS, and Debian. Linux is known for its stability, security, and customization capabilities.</p>
+
+        <h2>Why Use Linux?</h2>
+        <p>Linux is popular for:</p>
+        <ul>
+            <li><strong>Open Source:</strong> The source code is available for modification, making it highly customizable and adaptable.</li>
+            <li><strong>Security:</strong> Linux is less prone to viruses and malware compared to other operating systems.</li>
+            <li><strong>Stability:</strong> Linux is known for its robustness and reliability, especially for server environments.</li>
+            <li><strong>Performance:</strong> Linux is lightweight and performs well even on older hardware.</li>
+            <li><strong>Community Support:</strong> There is a large community of developers and users offering free support and resources.</li>
+        </ul>
+
+        <h2>Popular Linux Distributions</h2>
+        <ul>
+            <li><strong>Ubuntu:</strong> User-friendly and popular for desktops and servers.</li>
+            <li><strong>CentOS/RHEL:</strong> Preferred for enterprise servers and environments.</li>
+            <li><strong>Debian:</strong> Known for its stability and used as the base for many other distributions.</li>
+            <li><strong>Fedora:</strong> A cutting-edge distribution with the latest software.</li>
+            <li><strong>Arch Linux:</strong> A rolling release distribution known for its flexibility and customization.</li>
+        </ul>
+
+        <h2>How to Install Linux</h2>
+        <h3>1. Installing Ubuntu</h3>
+        <pre>
+# Download the Ubuntu ISO from the official website
+# Create a bootable USB drive using tools like Rufus or Etcher
+# Boot the system from the USB drive and follow the installation wizard
+        </pre>
+
+        <h3>2. Installing CentOS</h3>
+        <pre>
+# Download the CentOS ISO from the official website
+# Create a bootable USB drive or DVD
+# Boot from the USB/DVD and follow the installation instructions
+        </pre>
+
+        <h3>3. Installing Fedora</h3>
+        <pre>
+# Download the Fedora ISO from the official website
+# Use a tool like Rufus to create a bootable USB drive
+# Boot the system from the USB drive and follow the installation steps
+        </pre>
+
+        <h3>4. Installing Linux on a Virtual Machine</h3>
+        <p>You can use virtualization software such as VirtualBox or VMware to run Linux without affecting your existing operating system. Create a new VM, allocate resources, and mount the Linux ISO to start the installation.</p>
+
+        <h2>Common Linux Features</h2>
+        <ul>
+            <li><strong>Package Management:</strong> Tools like APT, YUM, and DNF for managing software packages.</li>
+            <li><strong>Shell Environment:</strong> Bash and other shells for command-line interaction and scripting.</li>
+            <li><strong>File Permissions:</strong> Fine-grained access control over files and directories.</li>
+            <li><strong>Process Management:</strong> Commands like ps, top, and htop for monitoring and managing running processes.</li>
+            <li><strong>Customizability:</strong> Ability to modify almost every aspect of the system to suit user preferences.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Regularly update and patch your system to maintain security.</li>
+            <li>Use strong password policies and enable user authentication.</li>
+            <li>Backup important data frequently and create system snapshots.</li>
+            <li>Learn basic command-line skills to maximize productivity.</li>
+            <li>Keep track of running services and use tools like `top`, `htop`, and `systemctl` for system management.</li>
+
+        </ul>
+
+        <h2>Essential Linux Commands</h2>
+
+        <h3>File and Directory Management</h3>
+        <pre>
+# List files and directories
+$ ls
+
+# List all files including hidden ones
+$ ls -a
+
+# Change directory
+$ cd <directory>
+
+# Create a new directory
+$ mkdir <directory_name>
+
+# Remove a file
+$ rm <file_name>
+
+# Remove a directory and its contents
+$ rm -r <directory_name>
+
+# Copy files or directories
+$ cp <source> <destination>
+
+# Move or rename files or directories
+$ mv <source> <destination>
+
+# Display the current working directory
+$ pwd
+
+# Display contents of a file
+$ cat <file_name>
+
+# View contents of a file with pagination
+$ less <file_name>
+
+# Search for a string in a file
+$ grep "<string>" <file_name>
+
+# Display file size and disk usage
+$ du -sh <directory>
+        </pre>
+
+        <h3>System Information</h3>
+        <pre>
+# Display system information
+$ uname -a
+
+# Check memory usage
+$ free -h
+
+# Show disk space usage
+$ df -h
+
+# Show CPU information
+$ lscpu
+
+# Show hardware details
+$ lshw
+
+# Check running processes
+$ ps aux
+
+# Monitor real-time system processes
+$ top
+
+# Display current user and groups
+$ whoami
+
+# Show logged in users
+$ who
+        </pre>
+
+        <h3>File Permissions and Ownership</h3>
+        <pre>
+# Change file permissions
+$ chmod <permissions> <file_name>
+
+# Change file owner
+$ chown <owner>:<group> <file_name>
+
+# Change group ownership
+$ chgrp <group> <file_name>
+
+# View file permissions and ownership
+$ ls -l <file_name>
+        </pre>
+
+        <h3>Package Management</h3>
+        <pre>
+# Update package list (Debian/Ubuntu)
+$ sudo apt update
+
+# Install a package (Debian/Ubuntu)
+$ sudo apt install <package_name>
+
+# Remove a package (Debian/Ubuntu)
+$ sudo apt remove <package_name>
+
+# Upgrade all packages (Debian/Ubuntu)
+$ sudo apt upgrade
+
+# Update package list (CentOS/RHEL)
+$ sudo yum check-update
+
+# Install a package (CentOS/RHEL)
+$ sudo yum install <package_name>
+
+# Remove a package (CentOS/RHEL)
+$ sudo yum remove <package_name>
+        </pre>
+
+        <h3>Archiving and Compression</h3>
+        <pre>
+# Create a tar archive
+$ tar -cvf <archive_name>.tar <directory_or_file>
+
+# Extract a tar archive
+$ tar -xvf <archive_name>.tar
+
+# Create a compressed tar archive (gzip)
+$ tar -czvf <archive_name>.tar.gz <directory_or_file>
+
+# Extract a compressed tar archive (gzip)
+$ tar -xzvf <archive_name>.tar.gz
+
+# Compress a file using gzip
+$ gzip <file_name>
+
+# Decompress a gzip file
+$ gunzip <file_name>.gz
+
+# Compress a file using zip
+$ zip <archive_name>.zip <file_name_or_directory>
+
+# Extract a zip file
+$ unzip <archive_name>.zip
+        </pre>
+
+        <h3>Networking</h3>
+        <pre>
+# Display network configuration
+$ ifconfig
+
+# Show active network connections
+$ netstat -tuln
+
+# Check connectivity to a host
+$ ping <host_name_or_IP>
+
+# Display routing table
+$ route -n
+
+# Display current connections and listening ports
+$ ss -tuln
+
+# Show public IP address
+$ curl ifconfig.me
+        </pre>
+
+        <h3>Process Management</h3>
+        <pre>
+# Kill a process by PID
+$ kill <PID>
+
+# Force kill a process by PID
+$ kill -9 <PID>
+
+# Find a process by name
+$ pgrep <process_name>
+
+# Stop a process
+$ pkill <process_name>
+
+# Display process tree
+$ pstree
+        </pre>
+
+        <h3>Disk Management</h3>
+        <pre>
+# List disk drives and partitions
+$ lsblk
+
+# Show disk usage of all mounted file systems
+$ df -h
+
+# Check the disk usage of a specific directory
+$ du -sh <directory_name>
+
+# Mount a disk partition
+$ sudo mount <device> <mount_point>
+
+# Unmount a disk partition
+$ sudo umount <mount_point>
+        </pre>
+
+        <h3>System and User Management</h3>
+        <pre>
+# Add a new user
+$ sudo adduser <username>
+
+# Delete a user
+$ sudo deluser <username>
+
+# Change user password
+$ sudo passwd <username>
+
+# Add a user to a group
+$ sudo usermod -aG <group> <username>
+
+# Display users currently logged in
+$ who
+
+# Display user session information
+$ w
+        </pre>
+
+        <h3>Miscellaneous Commands</h3>
+        <pre>
+# Search for a command or package
+$ which <command>
+
+# Display the manual page for a command
+$ man <command>
+
+# Show a command's usage
+$ <command> --help
+
+# Display the last few lines of a log file
+$ tail -n 10 <log_file>
+
+# Display the first few lines of a file
+$ head -n 10 <file_name>
+
+# View command history
+$ history
+        </pre>
+
+    
+
+
+    </main>
+
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

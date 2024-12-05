@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansible - Automation Tool</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #1a73e8, #4285f4);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ansible - Automation Tool</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Ansible?</h2>
+        <p>Ansible is an open-source automation tool that simplifies IT operations by automating configuration management, application deployment, task execution, and multi-tier orchestration. It uses a simple, human-readable YAML syntax and is agentless, making it easy to use and scalable.</p>
+
+        <h2>Why Use Ansible?</h2>
+        <p>Ansible is popular because:</p>
+        <ul>
+            <li><strong>Simple Syntax:</strong> Uses YAML for playbooks, making it easy to learn and write.</li>
+            <li><strong>Agentless:</strong> No need to install agents on managed nodes; it communicates over SSH.</li>
+            <li><strong>Idempotent:</strong> Ensures that applying the same configuration multiple times will not change the outcome.</li>
+            <li><strong>Scalability:</strong> Easily manage thousands of servers or devices simultaneously.</li>
+            <li><strong>Integration:</strong> Works well with other DevOps tools and technologies, including Docker, Kubernetes, and cloud services.</li>
+        </ul>
+
+        <h2>Where is Ansible Used?</h2>
+        <p>Ansible is used in:</p>
+        <ul>
+            <li>Automating the deployment of applications and services.</li>
+            <li>Provisioning and configuring infrastructure.</li>
+            <li>Orchestrating multi-tier applications and workflows.</li>
+            <li>Managing cloud environments and virtual machines.</li>
+            <li>Automating routine administrative tasks and updates.</li>
+        </ul>
+
+        <h2>How to Install Ansible</h2>
+        <h3>1. Installing Ansible on Ubuntu/Debian</h3>
+        <pre>
+# Update the package list
+sudo apt update
+
+# Install Ansible
+sudo apt install -y ansible
+        </pre>
+
+        <h3>2. Installing Ansible on CentOS/RHEL</h3>
+        <pre>
+# Enable the EPEL repository
+sudo yum install -y epel-release
+
+# Install Ansible
+sudo yum install -y ansible
+        </pre>
+
+        <h3>3. Installing Ansible on macOS</h3>
+        <pre>
+# Install Ansible using Homebrew
+brew install ansible
+        </pre>
+
+        <h3>4. Installing Ansible on Windows</h3>
+        <p>For Windows, use Windows Subsystem for Linux (WSL) and follow the Ubuntu/Debian installation instructions above.</p>
+
+        <h2>Common Ansible Commands</h2>
+        <pre>
+# Check Ansible version
+ansible --version
+
+# Ping all hosts in the inventory
+ansible all -m ping
+
+# Run a simple command on a group of hosts
+ansible webservers -a "uptime"
+
+# Execute a playbook
+ansible-playbook playbook.yml
+
+# List all hosts in the inventory
+ansible-inventory --list
+
+# View Ansible configuration details
+ansible-config view
+        </pre>
+
+        <h2>Example Ansible Playbook</h2>
+        <pre>
+- name: Configure web server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Organize playbooks and roles for modularity and reuse.</li>
+            <li>Use variables and templates to make playbooks more dynamic.</li>
+            <li>Keep playbooks and inventory secure and manage access with proper permissions.</li>
+            <li>Test playbooks in a development environment before deploying to production.</li>
+            <li>Use Ansible Galaxy to leverage community roles and share your own.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

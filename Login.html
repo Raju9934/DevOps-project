@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, skyblue, red);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-box label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #666;
+        }
+
+        .form-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-box button:hover {
+            background: darkblue;
+        }
+
+        .form-box a {
+            text-decoration: none;
+            color: blue;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .alert {
+            position: fixed;
+            top: 10px;
+            right: -100%;
+            background: green;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            z-index: 9999;
+            transition: right 1s ease-in-out;
+        }
+
+        .alert.show {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .form-box {
+                padding: 15px;
+            }
+
+            .form-box h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box" style="background-color: #333;">
+        <h2>Login</h2>
+        <form id="loginForm" >
+            <label for="email" style="color: white;">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+            <label for="password" style="color: white;">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit">Login</button>
+            <a href="signup.html" style="color:white;">Don't have an account? Signup</a>
+        </form>
+    </div>
+
+    <div id="successAlert" class="alert">Login successful!</div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("http://localhost:3000/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    showSuccessAlert();
+                    setTimeout(() => {
+                        window.location.href = "Home.html";
+                    }, 2000);
+                } else {
+                    alert("Invalid credentials!");
+                }
+            } catch (err) {
+                alert("Error connecting to server.");
+            }
+        });
+
+        function showSuccessAlert() {
+            const alertBox = document.getElementById("successAlert");
+            alertBox.classList.add("show");
+
+            setTimeout(() => {
+                alertBox.classList.remove("show");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

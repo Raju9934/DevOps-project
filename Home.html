@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design with Footer</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: black;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        nav img {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            flex-shrink: 0;
+        }
+
+        nav a:last-child {
+            margin-left: auto;
+        }
+
+        /* Flex container for the cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            height: 200px;
+            width: 200px;
+            background: radial-gradient(white,skyblue);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 100px;
+            width: auto;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer .footer-container div {
+            flex: 1 1 300px;
+            margin: 10px;
+        }
+
+        footer .footer-container img {
+            height: 24px;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        footer .footer-container a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-container a:hover {
+            text-decoration: underline;
+        }
+
+        footer small {
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            nav li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .card-container {
+                gap: 15px;
+            }
+
+            .card {
+                height: 150px;
+                width: 150px;
+            }
+
+            .card img {
+                height: 80px;
+            }
+
+            footer .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 5px;
+            }
+
+            .card {
+                height: 120px;
+                width: 120px;
+            }
+
+            .card img {
+                height: 70px;
+            }
+
+            footer .footer-container div {
+                flex: 1 1 auto;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <li>
+            <img src="images/reading.png" alt="Logo">
+            <a href="Home.html">HOME</a>
+            <a href="About.html">ABOUT</a>
+            <a href="Contact.html">CONTACT</a>
+            <a href="Login.html">LOGOUT</a>
+        </li>
+    </nav>
+
+    <div class="card-container">
+        <a class="card" href="python.html"> <img src="images/icons8-python-48.png" alt="python"></a>
+        <a class="card" href="git.html"><img src="images/git.png" alt="Git"></a>
+        <a class="card" href="github.html"><img src="images/github.png" alt="GitHub"></a>
+        <a class="card" href="docker.html"><img src="images/docker (1).png" alt="Docker"></a>
+        <a class="card" href="kubernetes.html"><img src="images/kubernetes-icon.png" alt="Kubernetes"></a>
+        <a class="card" href="jenkins.html"><img src="images/jenkins-icon.png" alt="Jenkins"></a>
+        <a class="card" href="ansible.html"><img src="images/icons8-ansible-48.png" alt="Ansible"></a>
+        <a class="card" href="terraform.html"><img src="images/icons8-terraform-48.png" alt="Terraform"></a>
+        <a class="card" href="prome.html"><img src="images/icons8-prometheus-48.png" alt="Prometheus"></a>
+        <a class="card" href="grafana.html"><img src="images/icons8-grafana-48.png" alt="Grafana"></a>
+        <a class="card" href="linux.html"><img src="images/linux (1).png" alt="Linux"></a>
+        <a class="card" href="aws.html"><img src="images/icons8-aws-48.png" alt="AWS"></a>
+        <a class="card" href="s3.html"><img src="images/icons8-amazon-s3-48.png" alt="S3"></a>
+        <a class="card" href="html5.html"><img src="images/html-5.png" alt="HTML5"></a>
+        <a class="card" href="cssstyle.html"><img src="images/css-3.png" alt="CSS"></a>
+        <a class="card" href="javascript.html"><img src="images/js.png" alt="JavaScript"></a>
+        <a class="card" href="mongodb.html"><img src="images/icons8-mongodb-48.png" alt="MongoDB"></a>
+        <a class="card" href="express.html"><img src="images/icons8-express-js-64.png" alt="Express"></a>
+        <a class="card" href="react.html"><img src="images/icons8-react-js-100.png" alt="React"></a>
+        <a class="card" href="node.html"><img src="images/icons8-node-js-64.png" alt="node"></a>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h4>Contact Us</h4>
+                <p>Email: raju.gupta10u@gmail.com</p>
+                <p>Phone: 9934263946</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><img src="images/icons8-facebook-48.png" alt="Facebook"></a>
+                <a href="#"><img src="images/icons8-twitter-logo-48.png" alt="Twitter"></a>
+                <a href="#"><img src="images/icons8-instagram-logo-94.png" alt="Instagram"></a>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="Home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

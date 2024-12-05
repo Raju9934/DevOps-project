@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins - Automation Server</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jenkins - Automation Server</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Jenkins?</h2>
+        <p>Jenkins is an open-source automation server widely used for building, deploying, and automating software projects. It is popular in DevOps pipelines for continuous integration (CI) and continuous delivery (CD), allowing developers to integrate changes, run tests, and deploy applications seamlessly.</p>
+
+        <h2>Why Use Jenkins?</h2>
+        <p>Jenkins is used because:</p>
+        <ul>
+            <li><strong>Continuous Integration:</strong> Automates the process of integrating code changes frequently to detect issues early.</li>
+            <li><strong>Customizable:</strong> Has a rich ecosystem of plugins to support building, deploying, and automating various tasks.</li>
+            <li><strong>Easy Setup:</strong> Offers simple setup and easy-to-use web interface for managing jobs and tasks.</li>
+            <li><strong>Support for Multiple Languages:</strong> Works with various programming languages and technologies.</li>
+            <li><strong>Extensibility:</strong> Large number of plugins available for various build, test, and deployment tools.</li>
+        </ul>
+
+        <h2>Where is Jenkins Used?</h2>
+        <p>Jenkins is used in many scenarios, including:</p>
+        <ul>
+            <li>Automating software build and testing processes.</li>
+            <li>Implementing continuous integration and continuous deployment pipelines.</li>
+            <li>Setting up CI/CD pipelines for containerized applications using Docker and Kubernetes.</li>
+            <li>Integrating with version control systems like Git and SVN.</li>
+            <li>Deploying applications to cloud environments or on-premises servers.</li>
+        </ul>
+
+        <h2>How to Install Jenkins</h2>
+        <h3>1. Installing Jenkins on Windows</h3>
+        <ul>
+            <li>Download the Jenkins Windows installer from the <a href="https://www.jenkins.io/download/" target="_blank">Jenkins website</a>.</li>
+            <li>Run the installer and follow the setup wizard.</li>
+            <li>Access Jenkins via <code>http://localhost:8080</code> in your browser.</li>
+            <li>Complete the initial setup by unlocking Jenkins with the password from <code>C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword</code>.</li>
+        </ul>
+
+        <h3>2. Installing Jenkins on macOS</h3>
+        <ul>
+            <li>Install Homebrew if not already installed: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
+            <li>Install Jenkins using Homebrew: <code>brew install jenkins-lts</code></li>
+            <li>Start Jenkins: <code>brew services start jenkins-lts</code></li>
+            <li>Access Jenkins at <code>http://localhost:8080</code> and complete the initial setup.</li>
+        </ul>
+
+        <h3>3. Installing Jenkins on Linux (Ubuntu)</h3>
+        <pre>
+# Update the package list and install dependencies
+sudo apt update
+sudo apt install -y openjdk-11-jdk
+
+# Add Jenkins key and repository
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# Install Jenkins
+sudo apt update
+sudo apt install -y jenkins
+
+# Start Jenkins service
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+# Access Jenkins at http://localhost:8080
+        </pre>
+
+        <h2>Common Jenkins Commands</h2>
+        <pre>
+# Check Jenkins status
+sudo systemctl status jenkins
+
+# Start Jenkins service
+sudo systemctl start jenkins
+
+# Stop Jenkins service
+sudo systemctl stop jenkins
+
+# Restart Jenkins service
+sudo systemctl restart jenkins
+
+# Enable Jenkins to start on boot
+sudo systemctl enable jenkins
+
+# Disable Jenkins from starting on boot
+sudo systemctl disable jenkins
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Keep Jenkins and plugins up to date for security and performance.</li>
+            <li>Use declarative pipelines for better readability and maintainability.</li>
+            <li>Secure Jenkins with proper access control and user permissions.</li>
+            <li>Back up Jenkins configurations regularly.</li>
+            <li>Monitor Jenkins performance with built-in tools or third-party monitoring solutions.</li>
+        </ul>
+
+        <h2>Example Workflow</h2>
+        <p>Here's an example of a simple Jenkins pipeline script:</p>
+        <pre>
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/user/repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh './build.sh'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './run_tests.sh'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh './deploy.sh'
+            }
+        }
+    }
+}
+        </pre>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

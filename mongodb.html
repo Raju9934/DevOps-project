@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB - NoSQL Database</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #2b2b2b, #444);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MongoDB - NoSQL Database</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is MongoDB?</h2>
+        <p>MongoDB is an open-source, document-oriented NoSQL database designed to store and manage large amounts of unstructured data. It uses a flexible, schema-less structure with JSON-like documents, making it suitable for handling complex data and fast development cycles.</p>
+
+        <h2>Why Use MongoDB?</h2>
+        <p>MongoDB offers several benefits:</p>
+        <ul>
+            <li><strong>Scalability:</strong> Easily handles large volumes of data and scales horizontally across distributed clusters.</li>
+            <li><strong>Flexible Schema:</strong> Documents can vary in structure, allowing for easier changes and updates without downtime.</li>
+            <li><strong>High Performance:</strong> Optimized for read and write performance, with support for indexing and aggregation.</li>
+            <li><strong>Ease of Use:</strong> Simple and intuitive query language and powerful drivers for various programming languages.</li>
+            <li><strong>Community and Ecosystem:</strong> Strong support from a large community and a wide range of third-party tools and integrations.</li>
+        </ul>
+
+        <h2>Where is MongoDB Used?</h2>
+        <p>MongoDB is commonly used in:</p>
+        <ul>
+            <li>Content management systems and catalogs.</li>
+            <li>Real-time analytics and big data applications.</li>
+            <li>Mobile applications and IoT data storage.</li>
+            <li>Rapid development projects requiring flexible data models.</li>
+        </ul>
+
+        <h2>How to Install MongoDB</h2>
+        <h3>1. Installing MongoDB on Ubuntu/Debian</h3>
+        <pre>
+# Import the public key for the MongoDB repository
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+# Create the MongoDB source list file
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+# Update the package list
+sudo apt-get update
+
+# Install MongoDB packages
+sudo apt-get install -y mongodb-org
+
+# Start MongoDB and enable it to start at boot
+sudo systemctl start mongod
+sudo systemctl enable mongod
+        </pre>
+
+        <h3>2. Installing MongoDB on CentOS/RHEL</h3>
+        <pre>
+# Create the MongoDB repository file
+sudo nano /etc/yum.repos.d/mongodb-org-4.4.repo
+
+# Add the repository details to the file
+[mongodb-org-4.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/4.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
+
+# Install MongoDB
+sudo yum install -y mongodb-org
+
+# Start and enable MongoDB
+sudo systemctl start mongod
+sudo systemctl enable mongod
+        </pre>
+
+        <h3>3. Installing MongoDB on macOS</h3>
+        <pre>
+# Install MongoDB using Homebrew
+brew tap mongodb/brew
+brew install mongodb-community@4.4
+
+# Start MongoDB as a service
+brew services start mongodb/brew/mongodb-community
+        </pre>
+
+        <h3>4. Installing MongoDB on Windows</h3>
+        <p>Download the MongoDB installer from the <a href="https://www.mongodb.com/try/download/community" target="_blank">official MongoDB download page</a> and follow the installation steps in the wizard.</p>
+
+        <h2>Common MongoDB Features</h2>
+        <ul>
+            <li><strong>Document-Oriented:</strong> Stores data as documents in BSON (binary JSON) format.</li>
+            <li><strong>Indexing:</strong> Supports creating indexes to optimize queries.</li>
+            <li><strong>Aggregation:</strong> Powerful aggregation framework for transforming and analyzing data.</li>
+            <li><strong>Replication:</strong> Provides high availability through replica sets.</li>
+            <li><strong>Sharding:</strong> Distributes data across multiple servers to scale horizontally.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use indexes wisely to speed up query performance.</li>
+            <li>Regularly back up your database to prevent data loss.</li>
+            <li>Set up replica sets for high availability and fault tolerance.</li>
+            <li>Monitor the database performance using tools like MongoDB Atlas or built-in metrics.</li>
+            <li>Keep your MongoDB updated to access the latest features and security patches.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

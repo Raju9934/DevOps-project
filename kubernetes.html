@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes - Container Orchestration Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #3e8f8f, #66b3b3);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kubernetes - Container Orchestration Platform</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Kubernetes?</h2>
+        <p>Kubernetes, often abbreviated as K8s, is an open-source container orchestration platform for automating the deployment, scaling, and management of containerized applications. It helps manage clusters of containers in a distributed system, ensuring that your applications run reliably and efficiently across multiple environments.</p>
+
+        <h2>Why Use Kubernetes?</h2>
+        <p>Kubernetes is used because:</p>
+        <ul>
+            <li><strong>Scalability:</strong> Automatically scales applications up and down as needed.</li>
+            <li><strong>High Availability:</strong> Ensures the desired state of applications and handles failures seamlessly.</li>
+            <li><strong>Portability:</strong> Can be deployed on any cloud provider or on-premises environment.</li>
+            <li><strong>Resource Efficiency:</strong> Optimizes the use of underlying infrastructure resources.</li>
+            <li><strong>Self-healing:</strong> Automatically restarts, replaces, or reschedules containers that fail or become unresponsive.</li>
+        </ul>
+
+        <h2>Where is Kubernetes Used?</h2>
+        <p>Kubernetes is used across various industries and scenarios:</p>
+        <ul>
+            <li>Cloud-native application development and deployment.</li>
+            <li>Microservices architecture for managing multiple services.</li>
+            <li>DevOps and CI/CD pipelines for automated deployments.</li>
+            <li>Running big data and machine learning workloads.</li>
+            <li>Managing containerized applications in production environments.</li>
+        </ul>
+
+        <h2>How to Install Kubernetes</h2>
+        <h3>1. Installing Kubernetes on Windows</h3>
+        <ul>
+            <li>Install <strong>Docker Desktop</strong> with Kubernetes support from the <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">Docker website</a>.</li>
+            <li>Enable Kubernetes in the Docker Desktop settings.</li>
+            <li>Verify installation with <code>kubectl version</code>.</li>
+        </ul>
+
+        <h3>2. Installing Kubernetes on macOS</h3>
+        <ul>
+            <li>Install <strong>Docker Desktop</strong> for macOS from the <a href="https://docs.docker.com/desktop/install/mac-install/" target="_blank">Docker website</a>.</li>
+            <li>Enable Kubernetes in Docker Desktop preferences.</li>
+            <li>Verify installation with <code>kubectl version</code>.</li>
+        </ul>
+
+        <h3>3. Installing Kubernetes on Linux</h3>
+        <p>For Ubuntu-based systems, use the following steps:</p>
+        <pre>
+# Update the package list
+sudo apt-get update
+
+# Install required packages
+sudo apt-get install -y apt-transport-https ca-certificates curl
+
+# Add Kubernetes' GPG key
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Add the Kubernetes repository
+sudo apt-add-repository "deb http://apt.kubernetes.io/kubernetes-xenial main"
+
+# Install kubectl
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+# Install Minikube for a local Kubernetes cluster
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+# Start a local Kubernetes cluster
+minikube start
+        </pre>
+
+        <h2>Common Kubernetes Commands</h2>
+        <pre>
+# View cluster information
+$ kubectl cluster-info
+
+# Get nodes in the cluster
+$ kubectl get nodes
+
+# List all pods in a namespace
+$ kubectl get pods --namespace <namespace>
+
+# Deploy an application
+$ kubectl create deployment <deployment_name> --image=<image_name>
+
+# Expose a deployment to create a service
+$ kubectl expose deployment <deployment_name> --type=LoadBalancer --port=80
+
+# Scale an application
+$ kubectl scale deployment <deployment_name> --replicas=<number_of_replicas>
+
+# View detailed information about a pod
+$ kubectl describe pod <pod_name>
+
+# Apply configuration from a YAML file
+$ kubectl apply -f <file_name>.yaml
+
+# Delete a resource
+$ kubectl delete <resource_type> <resource_name>
+
+# View logs of a pod
+$ kubectl logs <pod_name>
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use labels and annotations to organize and manage resources.</li>
+            <li>Keep your YAML files version-controlled for consistency.</li>
+            <li>Configure resource requests and limits to manage resources effectively.</li>
+            <li>Use namespaces to isolate different environments or applications.</li>
+            <li>Monitor clusters with tools like Prometheus and Grafana for insights and alerts.</li>
+        </ul>
+
+        <h2>Example Workflow</h2>
+        <p>Here's an example workflow for deploying a simple application:</p>
+        <ol>
+            <li>Create a deployment: <code>kubectl create deployment my-app --image=my-app:latest</code></li>
+            <li>Expose the deployment as a service: <code>kubectl expose deployment my-app --type=LoadBalancer --port=80</code></li>
+            <li>Verify the deployment and service: <code>kubectl get deployments</code> and <code>kubectl get services</code></li>
+            <li>View the application logs: <code>kubectl logs <pod_name></code></li>
+            <li>Scale the deployment: <code>kubectl scale deployment my-app --replicas=3</code></li>
+        </ol>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

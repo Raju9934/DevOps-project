@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker - Containerization Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #fbc2eb, #a18cd1);
+            color: #333;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Docker - Containerization Platform</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Docker?</h2>
+        <p>Docker is an open-source platform that enables developers to automate the deployment of applications inside lightweight, portable containers. These containers package an application and all its dependencies, making it easy to move the application between different environments without compatibility issues.</p>
+
+        <h2>Why Use Docker?</h2>
+        <p>Docker provides significant benefits, including:</p>
+        <ul>
+            <li><strong>Portability:</strong> Containers can run on any system that supports Docker, ensuring consistent behavior across different environments (e.g., local, staging, production).</li>
+            <li><strong>Efficiency:</strong> Containers use system resources more efficiently than virtual machines by sharing the host system's kernel.</li>
+            <li><strong>Scalability:</strong> Docker makes it easy to scale applications up or down with container orchestration tools like Kubernetes.</li>
+            <li><strong>Isolation:</strong> Containers run applications in isolated environments, preventing conflicts between dependencies.</li>
+        </ul>
+
+        <h2>Where is Docker Used?</h2>
+        <p>Docker is widely used across various industries and use cases:</p>
+        <ul>
+            <li>DevOps for continuous integration and deployment (CI/CD).</li>
+            <li>Microservices architecture for creating modular applications.</li>
+            <li>Testing and development for creating consistent environments.</li>
+            <li>Data science and machine learning for running reproducible experiments.</li>
+            <li>Running legacy applications in containerized environments for better management.</li>
+        </ul>
+
+        <h2>How to Install Docker</h2>
+        <h3>1. Installing Docker on Windows</h3>
+        <ul>
+            <li>Download Docker Desktop for Windows from the <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">official Docker website</a>.</li>
+            <li>Run the installer and follow the setup wizard.</li>
+            <li>After installation, restart your computer if prompted.</li>
+            <li>Launch Docker Desktop and ensure Docker is running by checking the Docker icon in the system tray.</li>
+        </ul>
+
+        <h3>2. Installing Docker on macOS</h3>
+        <ul>
+            <li>Download Docker Desktop for macOS from the <a href="https://docs.docker.com/desktop/install/mac-install/" target="_blank">official Docker website</a>.</li>
+            <li>Open the downloaded `.dmg` file and drag Docker to the Applications folder.</li>
+            <li>Launch Docker from the Applications folder and ensure it is running.</li>
+        </ul>
+
+        <h3>3. Installing Docker on Linux</h3>
+        <p>For Ubuntu-based systems, follow these steps:</p>
+        <pre>
+# Update the package index
+sudo apt-get update
+
+# Install prerequisites
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Add Docker repository
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Update package index again
+sudo apt-get update
+
+# Install Docker
+sudo apt-get install docker-ce
+
+# Start Docker
+sudo systemctl start docker
+        </pre>
+
+        <h2>Common Docker Commands</h2>
+        <pre>
+# Check Docker version
+$ docker --version
+
+# Run a new container
+$ docker run -it <image_name> /bin/bash
+
+# Build an image from a Dockerfile
+$ docker build -t <image_name> .
+
+# List all containers
+$ docker ps -a
+
+# Stop a running container
+$ docker stop <container_id>
+
+# Start a stopped container
+$ docker start <container_id>
+
+# Remove a container
+$ docker rm <container_id>
+
+# Remove an image
+$ docker rmi <image_name>
+
+# Pull an image from Docker Hub
+$ docker pull <image_name>
+
+# Push an image to Docker Hub
+$ docker push <image_name>
+
+# List all images
+$ docker images
+
+# View logs of a container
+$ docker logs <container_id>
+
+# Inspect a container
+$ docker inspect <container_id>
+
+# Run a container in detached mode
+$ docker run -d <image_name>
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use lightweight base images (e.g., Alpine) to reduce image size.</li>
+            <li>Minimize the number of layers in the Dockerfile.</li>
+            <li>Use `.dockerignore` to exclude unnecessary files from the image.</li>
+            <li>Keep containerized applications stateless for easy scalability.</li>
+            <li>Use multi-stage builds to optimize image size and build processes.</li>
+        </ul>
+
+        <h2>Example Workflow</h2>
+        <p>Here's an example of a typical Docker workflow:</p>
+        <ol>
+            <li>Create a Dockerfile with the necessary instructions.</li>
+            <li>Build the Docker image: <code>docker build -t my-app .</code></li>
+            <li>Run a container from the image: <code>docker run -d -p 80:80 my-app</code></li>
+            <li>Push the image to a Docker registry: <code>docker push my-app</code></li>
+            <li>Deploy the container in your environment (e.g., Kubernetes or Docker Compose).</li>
+        </ol>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

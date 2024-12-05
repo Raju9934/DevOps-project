@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Styling the Web</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #2193b0;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #2c3e50;
+        }
+
+        code {
+            background: #f1f1f1;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS - Styling the Web</h1>
+        <a href="Home.html" style="text-decoration: none; color: white; font-size:small;">Bact to Home</a>
+    </header>
+
+    <main>
+        <h2>What is CSS?</h2>
+        <p>CSS (Cascading Style Sheets) is the language used to style and design web pages. It controls the layout, colors, fonts, and overall presentation of content.</p>
+
+        <h2>Why Use CSS?</h2>
+        <ul>
+            <li>Separates content (HTML) from design.</li>
+            <li>Provides flexibility to create visually appealing designs.</li>
+            <li>Enables responsive layouts for different devices.</li>
+            <li>Supports reusable styles across multiple pages.</li>
+        </ul>
+
+        <h2>Basic CSS Syntax</h2>
+        <p>CSS is written as rules consisting of selectors and declarations:</p>
+        <pre>
+selector {
+    property: value;
+}
+        </pre>
+
+        <h2>Types of CSS</h2>
+        <ol>
+            <li><strong>Inline CSS:</strong> Defined within an HTML tag using the <code>style</code> attribute.</li>
+            <li><strong>Internal CSS:</strong> Written inside a <code>&lt;style&gt;</code> block within the <code>&lt;head&gt;</code> of an HTML document.</li>
+            <li><strong>External CSS:</strong> Stored in a separate file with a <code>.css</code> extension and linked using the <code>&lt;link&gt;</code> tag.</li>
+        </ol>
+
+        <h2>Example: External CSS</h2>
+        <p>Here’s how you can link an external CSS file:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Responsive Design with CSS</h2>
+        <p>Responsive design ensures your website looks great on all devices. Use CSS media queries to apply styles based on screen size:</p>
+        <pre>
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+        </pre>
+
+        <h2>Common CSS Properties</h2>
+        <ul>
+            <li><code>color</code>: Sets the text color.</li>
+            <li><code>background-color</code>: Sets the background color.</li>
+            <li><code>font-family</code>: Defines the font style.</li>
+            <li><code>margin</code>: Creates space around elements.</li>
+            <li><code>padding</code>: Creates space within elements.</li>
+            <li><code>border</code>: Adds a border around elements.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Keep CSS files modular and organized.</li>
+            <li>Use classes and IDs for targeting specific elements.</li>
+            <li>Leverage CSS variables for consistent theming.</li>
+            <li>Minimize the use of inline styles for maintainability.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

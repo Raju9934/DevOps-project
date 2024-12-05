@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git - Version Control System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Git - Version Control System</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Git?</h2>
+        <p>Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows developers to track changes in source code during software development.</p>
+
+        <h2>Uses of Git</h2>
+        <ul>
+            <li>Version control for projects.</li>
+            <li>Collaboration between team members.</li>
+            <li>Backup of code and files.</li>
+            <li>Tracking changes and identifying issues.</li>
+        </ul>
+
+        <h2>Why Use Git?</h2>
+        <p>Git is essential for modern development because it provides an efficient way to manage codebases, ensures collaboration, and allows developers to revert to previous states if needed. It's widely used in the software industry due to its robustness and flexibility.</p>
+
+        <h2>Where Is Git Used?</h2>
+        <p>Git is used across industries for:</p>
+        <ul>
+            <li>Software development and maintenance.</li>
+            <li>Open-source projects.</li>
+            <li>Versioning documentation and content.</li>
+            <li>Managing DevOps workflows and CI/CD pipelines.</li>
+        </ul>
+
+        <h2>Advantages of Git</h2>
+        <ul>
+            <li>High performance for both small and large projects.</li>
+            <li>Distributed system allows full repository copies on every team member's machine.</li>
+            <li>Strong support for non-linear development with branches and merges.</li>
+            <li>Wide adoption in the software industry.</li>
+        </ul>
+
+        <h2>Common Git Commands</h2>
+        <pre>
+# Initialize a new Git repository
+$ git init
+
+# Clone an existing repository
+$ git clone <repository_url>
+
+# Check the status of your repository
+$ git status
+
+# Add files to the staging area
+$ git add <file_name>     # Add a specific file
+$ git add .              # Add all files
+
+# Commit changes
+$ git commit -m "Commit message"
+
+# View commit history
+$ git log
+
+# Create a new branch
+$ git branch <branch_name>
+
+# Switch to a branch
+$ git checkout <branch_name>
+
+# Merge a branch
+$ git merge <branch_name>
+
+# Push changes to a remote repository
+$ git push origin <branch_name>
+
+# Pull changes from a remote repository
+$ git pull origin <branch_name>
+
+# Check differences between changes
+$ git diff
+
+# Undo changes in the working directory
+$ git checkout -- <file_name>
+
+# Remove a file from the working directory and staging area
+$ git rm <file_name>
+
+# Stash changes temporarily
+$ git stash
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Commit changes frequently with clear messages.</li>
+            <li>Use branching for features and bug fixes.</li>
+            <li>Test code before merging branches.</li>
+            <li>Pull changes regularly to stay updated with the team.</li>
+        </ul>
+
+        <h2>Example Workflow</h2>
+        <p>Here's an example of a typical Git workflow:</p>
+        <ol>
+            <li>Clone the repository: <code>git clone <repository_url></code></li>
+            <li>Create a new branch: <code>git branch feature-branch</code></li>
+            <li>Switch to the branch: <code>git checkout feature-branch</code></li>
+            <li>Make changes and add files: <code>git add .</code></li>
+            <li>Commit the changes: <code>git commit -m "Added a new feature"</code></li>
+            <li>Push the branch: <code>git push origin feature-branch</code></li>
+            <li>Create a pull request to merge into the main branch.</li>
+        </ol>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

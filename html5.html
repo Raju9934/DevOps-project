@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - The Building Block of the Web</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        header {
+            background-color: #282c34;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #007acc;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #2c3e50;
+        }
+
+        code {
+            background: #f1f1f1;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML - The Building Block of the Web</h1>
+        <a href="Home.html"  style="text-decoration: none; color: white;font-size: small;">Bact to Home</a>
+    </header>
+
+    <main>
+        <h2>What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard language used to create web pages. It provides the structure for web content, allowing developers to organize text, images, links, and more.</p>
+
+        <h2>Key Features of HTML</h2>
+        <ul>
+            <li>Defines the structure of web pages.</li>
+            <li>Supports multimedia elements like images, videos, and audio.</li>
+            <li>Allows linking between pages using hyperlinks.</li>
+            <li>Works seamlessly with CSS and JavaScript to create interactive websites.</li>
+        </ul>
+
+        <h2>Basic HTML Structure</h2>
+        <p>An HTML document starts with a <code>&lt;!DOCTYPE html&gt;</code> declaration and includes the following basic structure:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My HTML Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+    &lt;p&gt;This is a sample HTML page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Common HTML Tags</h2>
+        <ul>
+            <li><code>&lt;h1&gt; to &lt;h6&gt;</code>: Headings</li>
+            <li><code>&lt;p&gt;</code>: Paragraph</li>
+            <li><code>&lt;a href=""&gt;</code>: Hyperlink</li>
+            <li><code>&lt;img src="" alt=""&gt;</code>: Image</li>
+            <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>: Lists</li>
+            <li><code>&lt;div&gt;</code>: Division/Container</li>
+        </ul>
+
+        <h2>Responsive Design</h2>
+        <p>To make your HTML pages responsive, use the <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> tag in the <code>&lt;head&gt;</code> section. This ensures your page scales correctly on different devices.</p>
+
+        <h2>Example: A Simple Responsive Page</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Responsive Page&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;p&gt;This page adjusts to different screen sizes.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Keep your code clean and well-organized.</li>
+            <li>Use semantic HTML tags (<code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>) for better accessibility.</li>
+            <li>Validate your HTML using tools like the <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+            <li>Use comments (<code>&lt;!-- Comment --&gt;</code>) to document your code.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HTML Learning Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

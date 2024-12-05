@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub - Your Development Hub</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+        }
+
+        header {
+            background-color: #24292e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: skyblue;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #0366d6;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #f6f8fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #2c3e50;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #24292e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub - Your Development Hub</h1>
+        <a href="Home.html" style="text-decoration: none; font-size: small; color: white;">Bact to Home</a>
+    </header>
+
+    <main>
+        <h2>What is GitHub?</h2>
+
+        <p>GitHub is a web-based platform for version control and collaboration. It allows developers to work together on projects, share code, and manage their work effectively using Git as the underlying version control system.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Repositories for hosting and managing code.</li>
+            <li>Branching and merging for streamlined workflows.</li>
+            <li>Issues and pull requests for effective project management.</li>
+            <li>Actions for automated CI/CD workflows.</li>
+            <li>Built-in package registry and code review tools.</li>
+        </ul>
+
+        <h2>Why Use GitHub?</h2>
+        <p>GitHub enhances collaboration, simplifies version control, and integrates with numerous tools to support modern software development workflows.</p>
+
+        <h2>Popular Uses of GitHub</h2>
+        <ul>
+            <li>Collaborating on open-source projects.</li>
+            <li>Hosting personal or organizational code repositories.</li>
+            <li>Automating CI/CD pipelines with GitHub Actions.</li>
+            <li>Showcasing projects to potential employers or collaborators.</li>
+        </ul>
+
+        <h2>Getting Started with GitHub</h2>
+        <p>Follow these steps to start using GitHub:</p>
+        <ol>
+            <li>Sign up for an account on <a href="https://github.com" target="_blank">GitHub</a>.</li>
+            <li>Create a new repository.</li>
+            <li>Initialize the repository locally using Git:</li>
+            <pre>
+$ git init
+$ git remote add origin <repository_url>
+$ git add .
+$ git commit -m "Initial commit"
+$ git push -u origin main
+            </pre>
+            <li>Collaborate with others by creating branches and pull requests.</li>
+        </ol>
+
+        <h2>GitHub CLI Commands</h2>
+        <pre>
+# Login to GitHub CLI
+$ gh auth login
+
+# Create a new repository
+$ gh repo create <repository_name>
+
+# Clone a repository
+$ gh repo clone <repository_url>
+
+# Create a pull request
+$ gh pr create
+
+# View issues
+$ gh issue list
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Write clear and concise commit messages.</li>
+            <li>Use branches for new features and bug fixes.</li>
+            <li>Regularly review and merge pull requests.</li>
+            <li>Maintain an organized project structure.</li>
+        </ul>
+
+        <h2>Example Workflow</h2>
+        <p>Here’s an example workflow for contributing to a GitHub repository:</p>
+        <ol>
+            <li>Fork the repository on GitHub.</li>
+            <li>Clone the repository locally: <code>git clone <repository_url></code></li>
+            <li>Create a new branch: <code>git checkout -b feature-branch</code></li>
+            <li>Make changes and commit them: <code>git commit -m "Added feature"</code></li>
+            <li>Push the branch to your fork: <code>git push origin feature-branch</code></li>
+            <li>Create a pull request from your fork to the original repository.</li>
+        </ol>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GitHub Learning Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

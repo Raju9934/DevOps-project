@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AWS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .services-list div {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .services-list div {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-list div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Amazon Web Services (AWS)
+        <br>
+        <a href="Home.html" style="text-decoration: none; color: white;font-size: small;">Bact to Home</a>
+    </header>
+    <main>
+        <section>
+            <h2>What is AWS?</h2>
+            <p>
+                Amazon Web Services (AWS) is a comprehensive cloud computing platform provided by Amazon. 
+                It offers a wide range of services including computing power, storage options, networking capabilities, 
+                machine learning, and analytics tools to help businesses build and scale applications efficiently.
+            </p>
+        </section>
+
+        <section>
+            <h2>Why Use AWS?</h2>
+            <p>
+                AWS is widely used because of its scalability, flexibility, and cost-effectiveness. 
+                Organizations choose AWS to:
+            </p>
+            <ul>
+                <li>Reduce infrastructure costs with a pay-as-you-go pricing model.</li>
+                <li>Access powerful computing resources without upfront investments.</li>
+                <li>Ensure high availability and reliability with global infrastructure.</li>
+                <li>Enhance security with robust compliance and monitoring features.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Where is AWS Used?</h2>
+            <p>
+                AWS is used across various industries and scenarios, including:
+            </p>
+            <ul>
+                <li>Hosting websites and web applications.</li>
+                <li>Data storage and backup solutions.</li>
+                <li>Big data analytics and artificial intelligence.</li>
+                <li>Mobile and gaming application development.</li>
+                <li>DevOps automation and CI/CD pipelines.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>AWS Services for DevOps</h2>
+            <p>
+                AWS offers numerous services specifically designed for DevOps practices, including:
+            </p>
+            <div class="services-list">
+                <div>EC2 (Elastic Compute Cloud)</div>
+                <div>S3 (Simple Storage Service)</div>
+                <div>CodePipeline</div>
+                <div>CodeBuild</div>
+                <div>CodeDeploy</div>
+                <div>CloudFormation</div>
+                <div>Elastic Beanstalk</div>
+                <div>CloudWatch</div>
+                <div>IAM (Identity and Access Management)</div>
+                <div>EKS (Elastic Kubernetes Service)</div>
+                <div>Lambda</div>
+                <div>RDS (Relational Database Service)</div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

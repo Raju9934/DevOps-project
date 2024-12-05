@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.js - JavaScript Library for UI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #282c34, #1c1f23);
+            color: #fff;
+        }
+
+        header {
+            background-color: #20232a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #61dafb;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #61dafb;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #20232a;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>React.js - JavaScript Library for UI</h1>
+        <a style="text-decoration: none; color: #61dafb;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is React.js?</h2>
+        <p>React.js is a powerful and popular JavaScript library developed by Facebook for building user interfaces, particularly for single-page applications. It allows developers to create large web applications that can update and render efficiently in response to data changes.</p>
+
+        <h2>Why Use React.js?</h2>
+        <p>React.js provides several benefits that make it a popular choice for front-end development:</p>
+        <ul>
+            <li><strong>Component-Based:</strong> React allows you to build encapsulated components that manage their own state and can be composed to create complex UIs.</li>
+            <li><strong>Declarative:</strong> You can design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</li>
+            <li><strong>Virtual DOM:</strong> React uses a virtual DOM to optimize rendering, making the user experience fast and smooth.</li>
+            <li><strong>Unidirectional Data Flow:</strong> React’s data flow is predictable, making debugging and testing easier.</li>
+            <li><strong>Large Ecosystem:</strong> There is a strong community and a large number of libraries and tools available for React, making development faster and more flexible.</li>
+        </ul>
+
+        <h2>Where is React.js Used?</h2>
+        <p>React is used for:</p>
+        <ul>
+            <li>Building user interfaces for single-page applications (SPAs).</li>
+            <li>Developing mobile applications using React Native.</li>
+            <li>Creating web components that can be reused across projects.</li>
+            <li>Building interactive and dynamic web applications with efficient updates.</li>
+        </ul>
+
+        <h2>How to Install React.js</h2>
+        <h3>1. Prerequisites</h3>
+        <p>Ensure Node.js and npm are installed. Run the following commands to check:</p>
+        <pre>
+node -v
+npm -v
+        </pre>
+
+        <h3>2. Creating a New React App</h3>
+        <p>Use `create-react-app` to bootstrap a new React project:</p>
+        <pre>
+# Install create-react-app globally
+npm install -g create-react-app
+
+# Create a new React app
+npx create-react-app my-react-app
+
+# Navigate into the project directory
+cd my-react-app
+
+# Start the development server
+npm start
+        </pre>
+
+        <h3>3. Creating a Simple React Component</h3>
+        <pre>
+import React from 'react';
+
+// A simple functional component
+function App() {
+    return (
+        <div>
+            <h1>Hello, React!</h1>
+            <p>Welcome to my first React application.</p>
+        </div>
+    );
+}
+
+export default App;
+        </pre>
+
+        <h2>Common React Features</h2>
+        <ul>
+            <li><strong>JSX:</strong> JavaScript XML syntax allows you to write HTML-like code in your JavaScript files.</li>
+            <li><strong>Components:</strong> React apps are made up of components, which can be functional or class-based.</li>
+            <li><strong>State and Props:</strong> React components can have local state and accept data via props.</li>
+            <li><strong>Lifecycle Methods:</strong> Methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` are used in class components for different stages of the component lifecycle.</li>
+            <li><strong>Hooks:</strong> React 16.8 introduced hooks like `useState` and `useEffect` for functional components, enabling them to use state and lifecycle features.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Keep components small and reusable.</li>
+            <li>Use prop types to validate props in your components.</li>
+            <li>Use state management libraries like Redux or Context API for managing complex state.</li>
+            <li>Ensure proper use of hooks, and avoid side effects within the component rendering.</li>
+            <li>Follow the "DRY" (Don't Repeat Yourself) principle to maintain cleaner code.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

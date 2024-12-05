@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraform - Infrastructure as Code</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #6A11CB, #2575FC);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terraform - Infrastructure as Code</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Terraform?</h2>
+        <p>Terraform is an open-source tool developed by HashiCorp that allows you to define, provision, and manage infrastructure using declarative configuration files. It enables you to create infrastructure as code (IaC) and manage it efficiently, making your infrastructure more reproducible and scalable.</p>
+
+        <h2>Why Use Terraform?</h2>
+        <p>Terraform is widely used because:</p>
+        <ul>
+            <li><strong>Declarative Language:</strong> Infrastructure can be defined using HashiCorp Configuration Language (HCL), which is easy to read and write.</li>
+            <li><strong>Multi-Cloud Support:</strong> It supports multiple providers such as AWS, Azure, Google Cloud, and more, allowing you to manage resources across different platforms.</li>
+            <li><strong>Idempotency:</strong> Ensures that applying the same configuration multiple times will produce the same result, reducing errors.</li>
+            <li><strong>Infrastructure Management:</strong> Handles the entire lifecycle of your infrastructure, from provisioning to destruction.</li>
+            <li><strong>State Management:</strong> Maintains a state file that keeps track of the resources and their relationships, ensuring accurate management.</li>
+        </ul>
+
+        <h2>Where is Terraform Used?</h2>
+        <p>Terraform is used in:</p>
+        <ul>
+            <li>Provisioning cloud infrastructure.</li>
+            <li>Deploying and managing containerized applications.</li>
+            <li>Setting up networking configurations.</li>
+            <li>Configuring security groups and firewall rules.</li>
+            <li>Orchestrating multi-cloud and hybrid-cloud environments.</li>
+        </ul>
+
+        <h2>How to Install Terraform</h2>
+        <h3>1. Installing Terraform on Ubuntu/Debian</h3>
+        <pre>
+# Update package repository
+sudo apt-get update
+
+# Install required packages
+sudo apt-get install -y software-properties-common
+
+# Add HashiCorp's official GPG key
+wget -qO- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+# Add HashiCorp repository
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+# Install Terraform
+sudo apt-get update && sudo apt-get install -y terraform
+        </pre>
+
+        <h3>2. Installing Terraform on CentOS/RHEL</h3>
+        <pre>
+# Add HashiCorp's repository
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+
+# Install Terraform
+sudo yum -y install terraform
+        </pre>
+
+        <h3>3. Installing Terraform on macOS</h3>
+        <pre>
+# Install Terraform using Homebrew
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+        </pre>
+
+        <h3>4. Installing Terraform on Windows</h3>
+        <p>Download the Terraform executable from the <a href="https://www.terraform.io/downloads.html" target="_blank">official Terraform download page</a> and add it to your system's PATH.</p>
+
+        <h2>Common Terraform Commands</h2>
+        <pre>
+# Check Terraform version
+terraform --version
+
+# Initialize a Terraform working directory
+terraform init
+
+# Validate the configuration files
+terraform validate
+
+# Format the configuration files
+terraform fmt
+
+# Create an execution plan
+terraform plan
+
+# Apply the configuration to create resources
+terraform apply
+
+# Destroy the infrastructure created by Terraform
+terraform destroy
+
+# View the current state
+terraform show
+
+# List all resources in the state file
+terraform state list
+        </pre>
+
+        <h2>Example Terraform Configuration</h2>
+        <pre>
+# main.tf
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleInstance"
+  }
+}
+        </pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use modules to organize your code and improve reusability.</li>
+            <li>Keep sensitive data secure by using environment variables or secret management tools.</li>
+            <li>Version control your Terraform configuration files.</li>
+            <li>Use workspaces to manage different environments (e.g., dev, staging, production).</li>
+            <li>Run `terraform plan` before `terraform apply` to review the changes that will be made.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

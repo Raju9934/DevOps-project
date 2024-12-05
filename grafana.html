@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafana - Data Visualization and Monitoring</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #1f3c88, #2e5ab0);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Grafana - Data Visualization and Monitoring</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Grafana?</h2>
+        <p>Grafana is an open-source platform for monitoring and observability that enables users to query, visualize, and analyze data from a wide variety of data sources. It provides powerful and flexible dashboards, alerting, and data exploration tools that make it an essential tool for DevOps and system administrators.</p>
+
+        <h2>Why Use Grafana?</h2>
+        <p>Grafana is popular for several reasons:</p>
+        <ul>
+            <li><strong>Customizable Dashboards:</strong> Create and share interactive dashboards that display real-time data.</li>
+            <li><strong>Wide Range of Data Sources:</strong> Connects with various data sources like Prometheus, InfluxDB, MySQL, PostgreSQL, Elasticsearch, and more.</li>
+            <li><strong>Alerting System:</strong> Set up alerts based on metrics thresholds and receive notifications via email, Slack, or other communication tools.</li>
+            <li><strong>Data Exploration:</strong> Offers detailed data exploration capabilities with built-in visualization and filtering options.</li>
+            <li><strong>Community and Plugin Support:</strong> A strong community and a marketplace full of plugins for extended functionality.</li>
+        </ul>
+
+        <h2>Where is Grafana Used?</h2>
+        <p>Grafana is used in:</p>
+        <ul>
+            <li>Monitoring application and infrastructure performance.</li>
+            <li>Visualizing data from databases and data lakes.</li>
+            <li>Displaying metrics and logs from cloud-native and on-premises environments.</li>
+            <li>Supporting business intelligence and data analysis use cases.</li>
+        </ul>
+
+        <h2>How to Install Grafana</h2>
+        <h3>1. Installing Grafana on Ubuntu/Debian</h3>
+        <pre>
+# Add the Grafana GPG key
+sudo apt-get install -y software-properties-common
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+
+# Add the Grafana APT repository
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+# Update the package list and install Grafana
+sudo apt-get update
+sudo apt-get install grafana
+
+# Start Grafana and enable it to start at boot
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server
+        </pre>
+
+        <h3>2. Installing Grafana on CentOS/RHEL</h3>
+        <pre>
+# Add the Grafana repository
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://packages.grafana.com/oss/rpm/grafana.repo
+
+# Install Grafana
+sudo yum install grafana
+
+# Start and enable Grafana
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server
+        </pre>
+
+        <h3>3. Installing Grafana on macOS</h3>
+        <pre>
+# Install Grafana using Homebrew
+brew tap grafana/grafana
+brew install grafana
+
+# Start Grafana as a service
+brew services start grafana
+        </pre>
+
+        <h3>4. Installing Grafana on Windows</h3>
+        <p>Download the Grafana installer from the <a href="https://grafana.com/grafana/download" target="_blank">official Grafana download page</a> and follow the installation wizard.</p>
+
+        <h2>Common Grafana Features</h2>
+        <ul>
+            <li><strong>Dashboards:</strong> Create customized and interactive visualizations.</li>
+            <li><strong>Panels:</strong> Different types of visualizations like graphs, singlestat, tables, and more.</li>
+            <li><strong>Alerting:</strong> Set up alerts and notifications based on metric thresholds.</li>
+            <li><strong>Annotations:</strong> Add notes to specific points on a graph for context.</li>
+            <li><strong>Plugins:</strong> Extend functionality with plugins from the Grafana Marketplace.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use templates to create reusable dashboard components.</li>
+            <li>Organize data into folders for better manageability.</li>
+            <li>Set up user access and permissions for improved security.</li>
+            <li>Regularly update Grafana to access new features and security patches.</li>
+            <li>Leverage annotations and notes to provide context on graphs and charts.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

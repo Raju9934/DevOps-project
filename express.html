@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express.js - Web Application Framework</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #333, #666);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Express.js - Web Application Framework</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Express.js?</h2>
+        <p>Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It simplifies the process of handling HTTP requests, routing, middleware, and more, making it a popular choice for server-side development.</p>
+
+        <h2>Why Use Express.js?</h2>
+        <p>Express.js offers several advantages:</p>
+        <ul>
+            <li><strong>Lightweight and Fast:</strong> Offers a small and fast framework that doesn't add a lot of overhead.</li>
+            <li><strong>Flexible:</strong> Allows for easy integration with other libraries and tools.</li>
+            <li><strong>Minimalistic:</strong> Provides just the essentials needed for building applications without unnecessary features.</li>
+            <li><strong>Robust Middleware:</strong> Easily supports middleware functions to handle requests, responses, and routing.</li>
+            <li><strong>Community and Ecosystem:</strong> A large community with many third-party packages for enhanced functionality.</li>
+        </ul>
+
+        <h2>Where is Express.js Used?</h2>
+        <p>Express.js is commonly used for:</p>
+        <ul>
+            <li>Building RESTful APIs for mobile and web applications.</li>
+            <li>Creating server-side rendered web applications.</li>
+            <li>Developing microservices architectures.</li>
+            <li>Building real-time applications with WebSockets.</li>
+        </ul>
+
+        <h2>How to Install Express.js</h2>
+        <h3>1. Prerequisites</h3>
+        <p>Ensure Node.js and npm are installed. Run the following commands to check:</p>
+        <pre>
+node -v
+npm -v
+        </pre>
+
+        <h3>2. Installing Express.js</h3>
+        <pre>
+# Create a new project directory
+mkdir my-express-app
+cd my-express-app
+
+# Initialize a new Node.js project
+npm init -y
+
+# Install Express.js as a dependency
+npm install express
+        </pre>
+
+        <h3>3. Creating a Basic Express Server</h3>
+        <pre>
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Basic route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+        </pre>
+
+        <h2>Common Express.js Features</h2>
+        <ul>
+            <li><strong>Routing:</strong> Handle different HTTP routes using simple methods like `app.get()`, `app.post()`, etc.</li>
+            <li><strong>Middleware:</strong> Use functions that execute during the request-response cycle for tasks like logging, authentication, etc.</li>
+            <li><strong>Serving Static Files:</strong> Easily serve static files like HTML, CSS, JavaScript with `express.static()`.</li>
+            <li><strong>Error Handling:</strong> Built-in error handling and custom error middleware.</li>
+            <li><strong>Template Engines:</strong> Integrate with popular template engines like EJS, Pug, and Handlebars.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Organize your code into separate modules for better maintainability.</li>
+            <li>Use middleware for reusable logic, such as authentication and logging.</li>
+            <li>Handle errors gracefully using error-handling middleware.</li>
+            <li>Use environment variables to configure settings for different environments.</li>
+            <li>Secure your application using HTTPS, helmet, and other security practices.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prometheus - Monitoring and Alerting</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #2d2d2d, #333);
+            color: #fff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prometheus - Monitoring and Alerting</h1>
+        <a style="text-decoration: none; color: white;" href="Home.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>What is Prometheus?</h2>
+        <p>Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability. It is widely used for collecting and storing metrics as time series data, providing powerful querying capabilities, and alerting functionalities for modern cloud-native and distributed systems.</p>
+
+        <h2>Why Use Prometheus?</h2>
+        <p>Prometheus is essential for:</p>
+        <ul>
+            <li><strong>Scalability:</strong> Suitable for monitoring complex systems at scale.</li>
+            <li><strong>Powerful Query Language:</strong> PromQL allows advanced querying and data analysis.</li>
+            <li><strong>Flexible Data Collection:</strong> It supports a pull model for collecting metrics from targets.</li>
+            <li><strong>Alerting System:</strong> Alerts based on custom thresholds that integrate with notification systems.</li>
+            <li><strong>Wide Ecosystem:</strong> Integrations with Grafana, exporters, and other tools for enhanced monitoring capabilities.</li>
+        </ul>
+
+        <h2>Where is Prometheus Used?</h2>
+        <p>Prometheus is commonly used in:</p>
+        <ul>
+            <li>Monitoring cloud-native applications and microservices.</li>
+            <li>Gathering performance metrics from systems and services.</li>
+            <li>Analyzing data to identify issues and improve application reliability.</li>
+            <li>Integrating with Kubernetes for containerized application monitoring.</li>
+        </ul>
+
+        <h2>How to Install Prometheus</h2>
+        <h3>1. Installing Prometheus on Ubuntu/Debian</h3>
+        <pre>
+# Download the latest version of Prometheus
+wget https://github.com/prometheus/prometheus/releases/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
+
+# Extract the downloaded tar file
+tar xvfz prometheus-2.42.0.linux-amd64.tar.gz
+
+# Move the extracted files to a desired location
+sudo mv prometheus-2.42.0.linux-amd64 /usr/local/prometheus
+
+# Run Prometheus
+cd /usr/local/prometheus
+./prometheus --config.file=prometheus.yml
+        </pre>
+
+        <h3>2. Installing Prometheus on CentOS/RHEL</h3>
+        <pre>
+# Install necessary dependencies
+sudo yum install wget -y
+
+# Download and extract Prometheus
+wget https://github.com/prometheus/prometheus/releases/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
+tar xvfz prometheus-2.42.0.linux-amd64.tar.gz
+
+# Move to the appropriate directory
+sudo mv prometheus-2.42.0.linux-amd64 /usr/local/prometheus
+
+# Run Prometheus
+cd /usr/local/prometheus
+./prometheus --config.file=prometheus.yml
+        </pre>
+
+        <h3>3. Installing Prometheus on macOS</h3>
+        <pre>
+# Install Prometheus using Homebrew
+brew install prometheus
+
+# Start Prometheus
+prometheus --config.file=/usr/local/etc/prometheus/prometheus.yml
+        </pre>
+
+        <h3>4. Installing Prometheus on Windows</h3>
+        <p>Download the Prometheus Windows installer from the <a href="https://prometheus.io/download/" target="_blank">official Prometheus download page</a> and follow the installation instructions provided in the documentation.</p>
+
+        <h2>Common Prometheus Features</h2>
+        <ul>
+            <li><strong>PromQL:</strong> A powerful query language to extract and filter time-series data.</li>
+            <li><strong>Multi-dimensional Data Model:</strong> Use labels to organize and filter metrics.</li>
+            <li><strong>Data Storage:</strong> Time-series data storage optimized for fast, reliable retrieval.</li>
+            <li><strong>Alert Manager:</strong> Integrates with alerting rules for sending notifications to various channels.</li>
+            <li><strong>Web UI:</strong> A built-in web interface for query exploration and dashboarding.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Use consistent naming conventions for metrics and labels.</li>
+            <li>Label your metrics appropriately for easier grouping and analysis.</li>
+            <li>Set up and manage alerting rules to respond to critical issues promptly.</li>
+            <li>Secure Prometheus instances with firewalls and authentication.</li>
+            <li>Regularly back up your configuration files and data.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 OnlineTecho. All rights reserved.</small>
+    </footer>
+</body>
+</html>
